@@ -4,6 +4,6 @@ public class TestRoughPage {
 	
 	
 	public static void RoughPage() {
-		System.out.println("this is roughPage");
+		System.out.println("used logs :)");
 	}
 }
