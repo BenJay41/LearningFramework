@@ -13,7 +13,7 @@ steps{
 
 echo ('project is built')
 
-}
+}}
 
 stage("Deploy to Dev"){
 steps{
