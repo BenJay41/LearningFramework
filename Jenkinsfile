@@ -91,23 +91,21 @@ publishHTML([allowMissing: false,
 
 
 
-
-stage("deploy to Stage env"){
-steps{
-catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'https://github.com/naveenanimation20/June2022POMUIFramework.git'
-                    sh "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_sanity.xml"
-                    
-                }
-}
-}
-
-
 stage("deploy to Stage env"){
 steps{
 echo ('deployed to stage')
 }
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
