@@ -16,6 +16,14 @@ pipeline
             }
         }
         
+        stage('Unit Test cases') 
+        {
+            steps
+            {
+                 echo ('perfromed unit test cases')
+            }
+        }
+        
         
         
         stage("Deploy to QA"){
