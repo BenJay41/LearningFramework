@@ -3,7 +3,7 @@ pipeline{
 agent any
 
 tools{
-maven 'Maven3'
+maven 'MAVEN_HOME'
 }
 
 stages{
@@ -40,8 +40,8 @@ echo ('deployed to QA')
 stage("perform regression testing"){
 steps{
 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'https://github.com/BenJay41/LearningFramework.git'
-                    sh "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_regression.xml"
+                    git 'https://github.com/BenJay41/LearningFramework'
+                    sh "mvn clean install -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_regression.xml"
                     
                 }
 }
