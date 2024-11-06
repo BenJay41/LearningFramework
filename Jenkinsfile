@@ -1,83 +1,30 @@
-pipeline 
-{
-    agent any
-    
+pipeline{
 
-    stages 
-    {
-        stage('Build') 
-        {
-            steps
-            {
-                 git 'https://github.com/jglick/simple-maven-project-with-tests.git'
-                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
-            }
-            post 
-            {
-                success
-                {
-                    junit '**/target/surefire-reports/TEST-*.xml'
-                    archiveArtifacts 'target/*.jar'
-                }
-            }
-        }
-        
-        
-        
-        stage("Deploy to QA"){
-            steps{
-                echo("deploy to qa")
-            }
-        }
-                
-        stage('Regression Automation Test') {
-            steps {
-                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'https://github.com/BenJay41/LearningFramework.git'
-                    sh "mvn clean install -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_regression.xml"
-                    
-                }
-            }
-        }
-                
-     
-        stage('Publish Allure Reports') {
-           steps {
-                script {
-                    allure([
-                        includeProperties: false,
-                        jdk: '',
-                        properties: [],
-                        reportBuildPolicy: 'ALWAYS',
-                        results: [[path: '/allure-results']]
-                    ])
-                }
-            }
-        }
-        
-        
-        stage('Publish Extent Report'){
-            steps{
-                     publishHTML([allowMissing: false,
-                                  alwaysLinkToLastBuild: false, 
-                                  keepAll: true, 
-                                  reportDir: 'reports', 
-                                  reportFiles: 'Spark.html', 
-                                  reportName: 'HTML Extent Report', 
-                                  reportTitles: ''])
-            }
-        }
-        
-        stage("Deploy to Stage"){
-            steps{
-                echo("deploy to Stage")
-            }
-        }
-        
-        
-        
-        
-        
-        
-    }
+stages{
+
+stage("build"){
+echo 'this is building stage'
+}
+
+stage("Deploy to Dev"){
+echo 'deployed to dev env'
+}
+
+stage("Run Unit test"){
+echo 'unit test cases performed'
+}
+
+
+stage("deploy to QA env"){
+echo 'deployed to QA'
+}
+
+}
+
+
+
+
+
+
+
 }
