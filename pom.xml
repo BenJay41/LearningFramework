@@ -20,13 +20,18 @@
 
 	</properties>
 
-
 	<dependencies>
+
 
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
 			<version>4.18.1</version>
+		</dependency>
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-handler</artifactId>
+			<version>4.1.110.Final</version>
 		</dependency>
 
 		<dependency>
@@ -34,7 +39,6 @@
 			<artifactId>webdrivermanager</artifactId>
 			<version>5.8.0</version>
 		</dependency>
-
 
 		<dependency>
 			<groupId>org.testng</groupId>
@@ -77,7 +81,13 @@
 		<dependency>
 			<groupId>com.aventstack</groupId>
 			<artifactId>extentreports</artifactId>
-			<version>${extentreports-version}</version>
+			<version>5.0.9</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
 		</dependency>
 
 		<dependency>
@@ -97,18 +107,11 @@
 			<artifactId>log4j-core</artifactId>
 			<version>2.24.0</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>1.18.34</version>
 			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>io.netty</groupId>
-			<artifactId>netty-handler</artifactId>
-			<version>4.1.110.Final</version>
 		</dependency>
 
 	</dependencies>
@@ -177,6 +180,5 @@
 			</plugin>
 
 		</plugins>
-
 	</build>
 </project>
