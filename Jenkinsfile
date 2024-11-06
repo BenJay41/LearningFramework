@@ -1,57 +1,43 @@
-pipeline{
+pipeline 
+{
+    agent any
+    
+    tools{
+    	maven 'Maven3'
+        }
 
-agent any
-
-tools{
-maven 'MAVEN_HOME'
-}
-
-stages{
-
-stage("build"){
-steps{
-
-echo ('project is built')
-
-}}
-
-stage("Deploy to Dev"){
-steps{
-echo ('deployed to dev env')
-}
-
-}
-
-stage("Run Unit test"){
-steps{
-echo ('unit test cases performed')
-}
-
-}
-
-
-stage("deploy to QA env"){
-steps{
-echo ('deployed to QA')
-}
-}
-
-
-stage("perform regression testing"){
-steps{
-catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git 'https://github.com/BenJay41/LearningFramework'
-                    sh "mvn clean install -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_regression.xml"
+    stages 
+    {
+        stage('Build') 
+        {
+            steps
+            {
+                 echo ('project is built')
+            }
+        }
+        
+        
+        
+        stage("Deploy to QA"){
+            steps{
+                echo("deploy to qa")
+            }
+        }
+                
+        stage('Regression Automation Test') {
+            steps {
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    git 'https://github.com/BenJay41/LearningFramework.git'
+                    bat "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_regression.xml"
                     
                 }
-}
-
-}
-
-
-stage("publish allure report"){
-steps{
-script {
+            }
+        }
+                
+     
+        stage('Publish Allure Reports') {
+           steps {
+                script {
                     allure([
                         includeProperties: false,
                         jdk: '',
@@ -60,52 +46,50 @@ script {
                         results: [[path: '/allure-results']]
                     ])
                 }
-}
-}
-
-
-
-
-stage("publish extent report"){
-steps{
-publishHTML([allowMissing: false,
+            }
+        }
+        
+        
+        stage('Publish Extent Report'){
+            steps{
+                     publishHTML([allowMissing: false,
                                   alwaysLinkToLastBuild: false, 
                                   keepAll: true, 
                                   reportDir: 'reports', 
-                                  reportFiles: 'Spark.html', 
+                                  reportFiles: 'TestExecutionReport.html', 
                                   reportName: 'HTML Extent Report', 
                                   reportTitles: ''])
-}
-}
-
-
-
-stage("deploy to Stage env"){
-steps{
-echo ('deployed to stage')
-}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
+            }
+        }
+        
+        stage("Deploy to Stage"){
+            steps{
+                echo("deploy to Stage")
+            }
+        }
+        
+        stage('Sanity Automation Test') {
+            steps {
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    git 'https://github.com/BenJay41/LearningFramework.git'
+                    bat "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_sanity.xml"
+                    
+                }
+            }
+        }
+        
+        stage('Publish sanity Extent Report'){
+            steps{
+                     publishHTML([allowMissing: false,
+                                  alwaysLinkToLastBuild: false, 
+                                  keepAll: true, 
+                                  reportDir: 'reports', 
+                                  reportFiles: 'TestExecutionReport.html', 
+                                  reportName: 'HTML Sanity Extent Report', 
+                                  reportTitles: ''])
+            }
+        }
+        
+        
+    }
 }
