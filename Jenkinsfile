@@ -20,7 +20,7 @@ pipeline
         {
             steps
             {
-                 echo ('perfromed unit test cases')
+                 echo ('performed unit test cases')
             }
         }
         

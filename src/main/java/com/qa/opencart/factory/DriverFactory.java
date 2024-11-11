@@ -17,6 +17,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.log4testng.Logger;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class DriverFactory {
 
 	private static final Logger LOG = Logger.getLogger(DriverFactory.class);
@@ -41,6 +43,7 @@ public class DriverFactory {
 
 //			driver = new ChromeDriver();
 			else {
+				WebDriverManager.chromedriver().setup();
 				tlDriver.set(new ChromeDriver(optManager.getChromeOptions()));
 			}
 
@@ -51,7 +54,7 @@ public class DriverFactory {
 			}
 			else {
 				driver = new FirefoxDriver();
-				tlDriver.set(new FirefoxDriver());
+				tlDriver.set(new FirefoxDriver(optManager.getFirefoxOptions()));
 			}
 
 
