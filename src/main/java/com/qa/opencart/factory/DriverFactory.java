@@ -43,6 +43,7 @@ public class DriverFactory {
 
 //			driver = new ChromeDriver();
 			else {
+				System.setProperty("webdriver.chrome.driver", "D:\\Aman\\all JAVA\\java Softwares\\chromedriver-win64\\chromedriver-win64");
 				WebDriverManager.chromedriver().setup();
 				tlDriver.set(new ChromeDriver(optManager.getChromeOptions()));
 			}
@@ -53,7 +54,8 @@ public class DriverFactory {
 				init_remoteDriver("firefox");	
 			}
 			else {
-				driver = new FirefoxDriver();
+//				driver = new FirefoxDriver();
+				WebDriverManager.firefoxdriver().setup();
 				tlDriver.set(new FirefoxDriver(optManager.getFirefoxOptions()));
 			}
 
