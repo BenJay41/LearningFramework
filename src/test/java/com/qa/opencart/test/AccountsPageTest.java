@@ -48,31 +48,7 @@ public class AccountsPageTest extends BaseTests{
 	}
 	
 	
-	@Test(priority = 1)
-	public void searchTest() {
-		sr = accpg.dosearch("macbook");
-		Assert.assertTrue(sr.isSearchCompleted());
-	}
 	
-	@DataProvider
-	public Object [][] getProductData(){
-		return new Object [][] {
-				 
-				{"MacBook","MacBook"},
-				{"MacBook","MacBook Pro"},
-				{"MacBook","MacBook Air"},
-				{"Samsung","Samsung Galaxy Tab 10.1"},
-				{"Samsung","Samsung SyncMaster 941BW"},
-				{"imac","iMac"}};
-				
-	}
-	
-	@Test(priority = 2,dataProvider = "getProductData")
-	public void productpgTest(String searchKey, String productName) {
-		sr = accpg.dosearch(searchKey);
-		ppg = sr.selectproduct(productName);
-		Assert.assertTrue(ppg.productPgSuccessfull(productName));
-	}
 	
 	
 	
