@@ -84,24 +84,24 @@ These instructions will help you set up and run the framework on your local mach
 
 
 **Parallel and Cross-Platform Testing**
-Docker allows you to perform parallel and cross-platform testing by utilizing multiple containers. Use `docker-compose` for setting up parallel test environments.
+      Docker allows you to perform parallel and cross-platform testing by utilizing multiple containers. Use `docker-compose` for setting up parallel test environments.
 
 
 ### Continuous Integration with Jenkins
 
-The project includes Jenkins configurations to automate the CI/CD pipeline:
+      The project includes Jenkins configurations to automate the CI/CD pipeline:
 
-   1. Configure Jenkins:
+   **1. Configure Jenkins:**
 
- - Add your GitHub repository to Jenkins.
- - Set up a Jenkins job with a Jenkinsfile or simple build commands like mvn test.
+       - Add your GitHub repository to Jenkins.
+       - Set up a Jenkins job with a Jenkinsfile or simple build commands like mvn test.
    
-   2. Set Up Docker in Jenkins:
+   **2. Set Up Docker in Jenkins:**
 
-* Ensure Jenkins has Docker installed for containerized testing.
-* Use docker-compose to execute parallel tests.
+      * Ensure Jenkins has Docker installed for containerized testing.
+      * Use docker-compose to execute parallel tests.
    
-   3. Integrate ngrok:
+   **3. Integrate ngrok:**
 
-* Use ngrok to expose local servers for web testing.
-* Configure ngrok with the public URL Jenkins provides for triggered builds.
+      * Use ngrok to expose local servers for web testing.
+      * Configure ngrok with the public URL Jenkins provides for triggered builds.
