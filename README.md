@@ -52,3 +52,18 @@ These instructions will help you set up and run the framework on your local mach
    ```bash
    git clone https://github.com/BenJay41/LearningFramework.git
    cd LearningFramework
+
+
+## Running Tests
+
+### Run Tests with Maven
+
+To execute the tests using Maven, run the following command:
+
+```bash
+mvn test
+
+### Run Tests with Jenkins
+Tests can be triggered automatically via Jenkins on a push event to GitHub. Ensure Jenkins is set up with GitHub webhooks.
+
+
