@@ -74,12 +74,12 @@ These instructions will help you set up and run the framework on your local mach
    **Building the Docker Image**
       To build a Docker image for running the tests, use the following command:
 
-         ```docker build -t learningframework```
+      ```docker build -t learningframework```
 
   **Running Tests in Docker**
      To run the tests in a Docker container:
 
-         ```docker run -it learningframework```
+      ```docker run -it learningframework```
 
 
 
@@ -93,15 +93,15 @@ These instructions will help you set up and run the framework on your local mach
 
    **1. Configure Jenkins:**
 
-       - Add your GitHub repository to Jenkins.
-       - Set up a Jenkins job with a Jenkinsfile or simple build commands like mvn test.
+   - Add your GitHub repository to Jenkins.
+   - Set up a Jenkins job with a Jenkinsfile or simple build commands like mvn test.
    
    **2. Set Up Docker in Jenkins:**
 
-      * Ensure Jenkins has Docker installed for containerized testing.
-      * Use docker-compose to execute parallel tests.
+   * Ensure Jenkins has Docker installed for containerized testing.
+   * Use docker-compose to execute parallel tests.
    
    **3. Integrate ngrok:**
 
-      * Use ngrok to expose local servers for web testing.
-      * Configure ngrok with the public URL Jenkins provides for triggered builds.
+   * Use ngrok to expose local servers for web testing.
+   * Configure ngrok with the public URL Jenkins provides for triggered builds.
