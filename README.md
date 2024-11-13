@@ -63,7 +63,7 @@ These instructions will help you set up and run the framework on your local mach
    
 **Run Tests with Maven**
 
-   **To execute the tests using Maven, run the following command:**
+   To execute the tests using Maven, run the following command:
    
    ```bash
    mvn test
@@ -72,12 +72,12 @@ These instructions will help you set up and run the framework on your local mach
 ### Docker Usage
 
    **Building the Docker Image**
-      _**To build a Docker image for running the tests, use the following command:**_
+      To build a Docker image for running the tests, use the following command:
 
          ```docker build -t learningframework```
 
   **Running Tests in Docker**
-      _**To run the tests in a Docker container:**_
+     To run the tests in a Docker container:
 
          ```docker run -it learningframework```
 
@@ -88,19 +88,20 @@ Docker allows you to perform parallel and cross-platform testing by utilizing mu
 
 
 ### Continuous Integration with Jenkins
-**The project includes Jenkins configurations to automate the CI/CD pipeline:**
+
+The project includes Jenkins configurations to automate the CI/CD pipeline:
 
    1. Configure Jenkins:
 
- -Add your GitHub repository to Jenkins.
- -Set up a Jenkins job with a Jenkinsfile or simple build commands like mvn test.
+ - Add your GitHub repository to Jenkins.
+ - Set up a Jenkins job with a Jenkinsfile or simple build commands like mvn test.
    
    2. Set Up Docker in Jenkins:
 
-*Ensure Jenkins has Docker installed for containerized testing.
-*Use docker-compose to execute parallel tests.
+* Ensure Jenkins has Docker installed for containerized testing.
+* Use docker-compose to execute parallel tests.
    
    3. Integrate ngrok:
 
-*Use ngrok to expose local servers for web testing.
-*Configure ngrok with the public URL Jenkins provides for triggered builds.
+* Use ngrok to expose local servers for web testing.
+* Configure ngrok with the public URL Jenkins provides for triggered builds.
