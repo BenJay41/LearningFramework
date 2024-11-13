@@ -29,8 +29,6 @@
 - [Docker Usage](#docker-usage)
 - [Continuous Integration with Jenkins](#continuous-integration-with-jenkins)
 - [Folder Structure](#folder-structure)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Getting Started
 
@@ -104,8 +102,30 @@ These instructions will help you set up and run the framework on your local mach
 
    * Ensure Jenkins has Docker installed for containerized testing.
    * Use docker-compose to execute parallel tests.
-   
+     
    **3. Integrate ngrok:**
 
    * Use ngrok to expose local servers for web testing.
    * Configure ngrok with the public URL Jenkins provides for triggered builds.
+
+### Folder Structure
+
+   ```
+   LearningFramework
+   ├── src
+   │   ├── main
+   │   │   └── java
+   │   │       └── page_objects  # Page Object Model files
+   │   └── test
+   │       └── java
+   │           └── tests         # Test files
+   ├── Dockerfile                # Docker configuration for the project
+   ├── Jenkinsfile               # Jenkins pipeline configuration
+   ├── pom.xml                   # Maven Project Object Model (POM) file
+   └── README.md                 # Project documentation
+   ```
+
+## Contact
+For any questions or issues, feel free to open an issue on the repository or contact the maintainer at:
+
+* **GitHub:** BenJay41
