@@ -74,12 +74,16 @@ These instructions will help you set up and run the framework on your local mach
    **Building the Docker Image**
       To build a Docker image for running the tests, use the following command:
 
-   ```docker build -t learningframework```
+   ```
+   docker build -t learningframework
+   ```
 
   **Running Tests in Docker**
      To run the tests in a Docker container:
 
-   ```docker run -it learningframework```
+   ```
+   docker run -it learningframework
+   ```
 
 
 
