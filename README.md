@@ -54,16 +54,24 @@ These instructions will help you set up and run the framework on your local mach
    cd LearningFramework
 
 
-## Running Tests
+### Running Tests
 
-### Run Tests with Maven
+#### Run Tests with Jenkins
+
+Tests can be triggered automatically via Jenkins on a push event to GitHub. Ensure Jenkins is set up with GitHub webhooks.
+
+#### Run Tests with Maven
 
 To execute the tests using Maven, run the following command:
 
 ```bash
 mvn test
 
-### Run Tests with Jenkins
-Tests can be triggered automatically via Jenkins on a push event to GitHub. Ensure Jenkins is set up with GitHub webhooks.
+
+## Docker Usage
+
+### Building the Docker Image
+To build a Docker image for running the tests, use the following command:
+
 
 
