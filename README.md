@@ -74,22 +74,22 @@ These instructions will help you set up and run the framework on your local mach
    **Building the Docker Image**
       To build a Docker image for running the tests, use the following command:
 
-      ```docker build -t learningframework```
+   ```docker build -t learningframework```
 
   **Running Tests in Docker**
      To run the tests in a Docker container:
 
-      ```docker run -it learningframework```
+   ```docker run -it learningframework```
 
 
 
 **Parallel and Cross-Platform Testing**
-      Docker allows you to perform parallel and cross-platform testing by utilizing multiple containers. Use `docker-compose` for setting up parallel test environments.
+   Docker allows you to perform parallel and cross-platform testing by utilizing multiple containers. Use `docker-compose` for setting up parallel test environments.
 
 
 ### Continuous Integration with Jenkins
 
-      The project includes Jenkins configurations to automate the CI/CD pipeline:
+   The project includes Jenkins configurations to automate the CI/CD pipeline:
 
    **1. Configure Jenkins:**
 
