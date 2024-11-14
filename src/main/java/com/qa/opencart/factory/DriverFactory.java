@@ -36,6 +36,7 @@ public class DriverFactory {
 
 		if (browsername.equals("chrome")) {
 
+			
 //			if remote webdriver is used
 			if (Boolean.parseBoolean(prop.getProperty("remote"))) {
 				init_remoteDriver("chrome");
@@ -43,8 +44,8 @@ public class DriverFactory {
 
 //			driver = new ChromeDriver();
 			else {
-//				System.setProperty("webdriver.chrome.driver", "C:\\Users\\Aman Benjamin\\.cache\\selenium\\chromedriver\\win64\\131.0.6778.69\\chromedriver.exe");
-				WebDriverManager.chromedriver().setup();
+//				System.setProperty("webdriver.chrome.driver", "D:\\Aman\\all JAVA\\java Softwares\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+//				WebDriverManager.chromedriver().setup();
 				tlDriver.set(new ChromeDriver(optManager.getChromeOptions()));
 			}
 
@@ -55,7 +56,7 @@ public class DriverFactory {
 			}
 			else {
 //				driver = new FirefoxDriver();
-				WebDriverManager.firefoxdriver().setup();
+//				WebDriverManager.firefoxdriver().setup();
 				tlDriver.set(new FirefoxDriver(optManager.getFirefoxOptions()));
 			}
 

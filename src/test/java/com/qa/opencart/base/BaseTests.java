@@ -27,7 +27,7 @@ public class BaseTests {
 	
 	@Parameters({"browser"})
 	@BeforeTest
-	public void initBrowser(@Optional("chrome")String browser) throws InterruptedException {
+	public void initBrowser(@Optional("firefox")String browser) throws InterruptedException {
 		df = new DriverFactory();
 		prop = df.initProp();
 		
