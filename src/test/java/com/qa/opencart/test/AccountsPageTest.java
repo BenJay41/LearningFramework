@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.qa.opencart.Constants.AppConstants;

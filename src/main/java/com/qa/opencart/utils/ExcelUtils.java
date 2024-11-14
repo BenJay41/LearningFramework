@@ -15,7 +15,7 @@ public class ExcelUtils {
 	public static Sheet sheet;
 
 	
-	public static final String TEST_DATASHEET_PATH = "D:\\Aman\\all JAVA\\java Softwares\\eclipse\\eclips-workspace\\may2024POM\\src\\test\\resources\\testdata\\Book1.xlsx";
+	public static final String TEST_DATASHEET_PATH = ".src/test/resources/testdata/Book1.xlsx";
 	
 	public static Object[][] getSheet(String sheetName) {
 		Object [][] data = null;

@@ -20,9 +20,9 @@ public class RegistrationPageTest extends BaseTests{
 	}
 	
 	@DataProvider
-	public Object[][] regData() {
-		Object[][] obj = ExcelUtils.getSheet(AppConstants.REGISTRATION_SHEET_NAME);
-		return obj;
+	public Object[][] getRegData() {
+		Object regData [][] = ExcelUtils.getSheet(AppConstants.REGISTRATION_SHEET_NAME);
+		return regData;
 	}
 	
 	public String randomMail() {
