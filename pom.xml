@@ -157,12 +157,12 @@
 
 						<!--without pipeline-->
 
-						<suiteXmlFile>
-							src/test/resources/testrunners/testng_regression.xml</suiteXmlFile>
+						<!--<suiteXmlFile>
+							src/test/resources/testrunners/testng_regression.xml</suiteXmlFile>-->
 
-						<!--with pipeline
+						<!--with pipeline-->
 							
-							<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>-->
+							<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
 
 					</suiteXmlFiles>
 
